@@ -12,6 +12,10 @@ class InventoryPage {
 
         this.cartButton = Selector('#shopping_cart_container > a')
     }
+
+    addItemsToCart(){
+        
+    }
 }
 
 
