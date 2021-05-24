@@ -1,0 +1,19 @@
+{
+  "name": "wzl_challenge_testcafe",
+  "version": "1.0.0",
+  "description": "Wizeline Test Cafe Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./tests"
+  },
+  "keywords": [
+    "testcafe",
+    "testing",
+    "automation"
+  ],
+  "author": "Hernaldo Alvarez <h.alva.gue@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^1.14.2"
+  }
+}
