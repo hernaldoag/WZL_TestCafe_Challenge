@@ -20,6 +20,13 @@ class CartPage{
         //await t.expect(Selector('#article-header').innerText).contains('Hertnyy')
     }
 
+    async presenceOnCartPageAndCheckout(){
+        await t.expect(this.title.exists).ok
+        await t.click(this.checkoutButton)
+    }
+
+
+
 }
 
 export default new CartPage()

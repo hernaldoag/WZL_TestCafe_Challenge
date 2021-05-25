@@ -28,14 +28,14 @@ test('Test 4 - Navigate to Shopping Cart', async t => {
 
 });
 
-test.only('Test 5 - Add a Single Item to Cart', async t=>{
+test('Test 5 - Add a Single Item to Cart', async t=>{
     await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
     await InventoryPage.addSingleItemToCart()
     await InventoryPage.checkCart()
     await CartPage.itemPresentOnCart()
 });
 
-test.only('Test 6 - Add multiple Item to Cart ', async t => {
+test('Test 6 - Add multiple Item to Cart ', async t => {
     await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
     await InventoryPage.addItemsToCart()
     await InventoryPage.checkCart()
@@ -43,28 +43,48 @@ test.only('Test 6 - Add multiple Item to Cart ', async t => {
 
 });
 
-
-
 test('Test 7 - Continue wih missing mail information', async t=>{
     await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
-    await t.click(InventoryPage.addToCartButton)
+    //await t.click(InventoryPage.addToCartButton)
+    await InventoryPage.addSingleItemToCart()
     await InventoryPage.checkCart()
-    await t.click(CartPage.checkoutButton)
+    await CartPage.presenceOnCartPageAndCheckout()
     await t.click(CheckoutPage.continueButton)
     await t.expect(CheckoutPage.errorMessage.innerText).contains(`${MESSAGES.ERROR_MESSAGES.FIRSTNAME_MISSING}`)
 });
 
 test('Test 8 - Fill User Information', async t=>{
     await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
-    await t.click(InventoryPage.addToCartButton)
-    .click(InventoryPage.cartButton)
+    await InventoryPage.addItemsToCart()
+    await InventoryPage.checkCart()
     await t.click(CartPage.checkoutButton)
     await CheckoutPage.FillCheckOutForm(TEST_DATA.CHECKOUT_DATA.FIRSTNAME,TEST_DATA.CHECKOUT_DATA.LASTNAME,TEST_DATA.CHECKOUT_DATA.ZIPCODE)
     await t.click(CheckoutStepTwoPage.FinishButton)
 });
 
-test('Test 9 - Final Order Items', async t=>{
+test.only('Test 8.1 - Fill User Information', async t=>{
+    await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
+    //await t.click(InventoryPage.addToCartButton)
+    await InventoryPage.addSingleItemToCart()
+    await InventoryPage.checkCart()
+    await CartPage.presenceOnCartPageAndCheckout()
+    await CheckoutPage.FillCheckOutFormAssertion(TEST_DATA.CHECKOUT_DATA.FIRSTNAME,TEST_DATA.CHECKOUT_DATA.LASTNAME,TEST_DATA.CHECKOUT_DATA.ZIPCODE)
+});
 
+test('Test 9 - Final Order Items', async t=>{
+    await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
+    await InventoryPage.addSingleItemToCart()
+    await InventoryPage.checkCart()
+    await CartPage.presenceOnCartPageAndCheckout()
+    await CheckoutPage.FillCheckOutFormAssertion(TEST_DATA.CHECKOUT_DATA.FIRSTNAME,TEST_DATA.CHECKOUT_DATA.LASTNAME,TEST_DATA.CHECKOUT_DATA.ZIPCODE)
+});
+
+test('Test 10 - FULL PURCHASE WITH DATA', async t => {
+    await LoginPage.LoginMethod(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
+    await InventoryPage.addSingleItemToCart()
+    await InventoryPage.checkCart()
+    await CartPage.presenceOnCartPageAndCheckout()
+    await CheckoutPage.FillCheckOutFormFull(TEST_DATA.CHECKOUT_DATA.FIRSTNAME,TEST_DATA.CHECKOUT_DATA.LASTNAME,TEST_DATA.CHECKOUT_DATA.ZIPCODE)
 });
 
 test('Test 10 - FULL PURCHASE WITH DATA', async t => {
