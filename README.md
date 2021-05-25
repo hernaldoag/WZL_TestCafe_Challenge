@@ -23,9 +23,9 @@ Steps
         Currenlty set for Chrome, run command:
           npm run test
 2. Run Test
-    for Chrome run
+    2.1for Chrome run
         npm run test 
-    for edge run
+    2.2 for edge run
         npm run test_edge
-    for edge run
+    2.3 for edge run
         npm run test_ie
