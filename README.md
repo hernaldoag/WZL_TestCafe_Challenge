@@ -1,9 +1,31 @@
 # WZL_TestCafe_Challenge
 Challenge for Wizeline TestCafe Certification 
 
+Project requirements
+    Node.js
 
-Download the repository
-On  CLI run
-  npm install testcafe
-
-To run test
+Steps
+1. Download Project and setup
+    a)- Download the repository on the desired directory
+        unzip the project
+        Go to the project location
+        open CLI 
+        Run command: 
+            npm install testcafe
+        currenlty set for Chrome, run command:
+          npm run test
+    a) Open git CLI on the desired folder
+        run command:
+            git clone https://github.com/hernaldoag/WZL_TestCafe_Challenge.git
+    
+        On CLI run command
+            npm install testcafe
+        Currenlty set for Chrome, run command:
+          npm run test
+2. Run Test
+    for Chrome run
+        npm run test 
+    for edge run
+        npm run test_edge
+    for edge run
+        npm run test_ie

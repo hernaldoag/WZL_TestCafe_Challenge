@@ -4,7 +4,10 @@
   "description": "Wizeline Test Cafe Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests"
+    "test": "testcafe chrome ./tests",
+    "test_edge": "testcafe edge ./tests",
+    "test_ie": "testcafe ie ./tests"
+
   },
   "keywords": [
     "testcafe",
