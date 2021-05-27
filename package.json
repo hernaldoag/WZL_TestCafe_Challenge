@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "testcafe chrome ./tests",
+    "test_multiple": "testcafe chrome,edge ./tests",
     "test_edge": "testcafe edge ./tests",
     "test_ie": "testcafe ie ./tests"
 

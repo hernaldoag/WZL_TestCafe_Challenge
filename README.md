@@ -1,6 +1,14 @@
 # WZL_TestCafe_Challenge
 Challenge for Wizeline TestCafe Certification 
 
+Pending task:
+
+-   Improve Roles implementation
+-   Extra Abstraction can be done
+-   Review Internet Explorer Execution as is thworing some errors
+
+
+
 Project requirements
     Node.js
 
@@ -12,7 +20,7 @@ Steps
         
         Go to the project location
         
-        open CLI 
+        Open CLI 
         
         Run command: 
             
@@ -36,15 +44,18 @@ Steps
         
           npm run test
 2. Run Test
+
+    2.1 For Running in multiple browsers and reporter
+        npm test_multiple --reporter json 
     
-    2.1 For Chrome run
+    2.2 For Chrome run
     
         npm run test 
     
-    2.2 For edge run
+    2.3 For edge run
     
         npm run test_edge
     
-    2.3 for edge run
+    2.4 for edge run
     
         npm run test_ie
